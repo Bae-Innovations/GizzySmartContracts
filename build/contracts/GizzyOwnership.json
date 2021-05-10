@@ -1,0 +1,215 @@
+{
+  "contractName": "GizzyOwnership",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyOwnership.sol\":\"GizzyOwnership\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyOwnership.sol\":{\"keccak256\":\"0xe2e094126e4b34225e09b40820fb869a6504aef8a2aee4d1f8291824763a1b2c\",\"urls\":[\"bzz-raw://040569716ec9ddd71c40c5031667a6c76e50603a33def4a483da8fbc6bd6c58d\",\"dweb:/ipfs/QmTEuRWpyV2fSVmJdha8AKhCxt6SykrMsjLMTjkS1JfiFq\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a7231582096132e9273b1204d5bece20775f44663aad0dda0e5ee6cc2ebbac875b3e79c0a64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a7231582096132e9273b1204d5bece20775f44663aad0dda0e5ee6cc2ebbac875b3e79c0a64736f6c63430005100032",
+  "sourceMap": "66:56:2:-;;;94:26;8:9:-1;5:2;;;30:1;27;20:12;5:2;94:26:2;66:56;;;;;;",
+  "deployedSourceMap": "66:56:2:-;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract GizzyOwnership {\n  constructor() public {\n  }\n}\n",
+  "sourcePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyOwnership.sol",
+  "ast": {
+    "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyOwnership.sol",
+    "exportedSymbols": {
+      "GizzyOwnership": [
+        299
+      ]
+    },
+    "id": 300,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 294,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 299,
+        "linearizedBaseContracts": [
+          299
+        ],
+        "name": "GizzyOwnership",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 297,
+              "nodeType": "Block",
+              "src": "115:5:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 298,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "105:2:2"
+            },
+            "returnParameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "115:0:2"
+            },
+            "scope": 299,
+            "src": "94:26:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 300,
+        "src": "66:56:2"
+      }
+    ],
+    "src": "32:91:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyOwnership.sol",
+      "exportedSymbols": {
+        "GizzyOwnership": [
+          299
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 294,
+        "name": "PragmaDirective",
+        "src": "32:32:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            299
+          ],
+          "name": "GizzyOwnership",
+          "scope": 300
+        },
+        "children": [
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 299,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 295,
+                "name": "ParameterList",
+                "src": "105:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 296,
+                "name": "ParameterList",
+                "src": "115:0:2"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 297,
+                "name": "Block",
+                "src": "115:5:2"
+              }
+            ],
+            "id": 298,
+            "name": "FunctionDefinition",
+            "src": "94:26:2"
+          }
+        ],
+        "id": 299,
+        "name": "ContractDefinition",
+        "src": "66:56:2"
+      }
+    ],
+    "id": 300,
+    "name": "SourceUnit",
+    "src": "32:91:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-05-10T16:54:59.078Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./GizzyAccessControl.sol"
+import "./GizzyAccessControl.sol";
 
 contract GizzyBase {
   
@@ -14,8 +14,8 @@ contract GizzyBase {
   event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
 
   struct Gizzy {
-    uint264 genes;
-    uint64 birthTimel
+    uint256 genes;
+    uint64 birthTime;
     uint64 cooldownEndTime;
     uint32 matronId;
     uint32 sireId;
@@ -39,9 +39,9 @@ contract GizzyBase {
     uint32(2 days),
     uint32(4 days),
     uint32(7 days)
-  ]
+  ];
 
-  Gizzy[] = gizzies;
+  Gizzy[] gizzies;
 
   mapping (uint256 => address) public kittyIndexToOwner;
 
@@ -51,9 +51,9 @@ contract GizzyBase {
 
   mapping (uint256 => address) public sireAllowedToAddress;
 
-  function _transfer
+  //function _transfer
 
-  function _createKitty
+  //function _createKitty
 
   // when u figure out how and where _createKitty is used, figure out how to create and use a 
   // _createItem function and everything that uses it

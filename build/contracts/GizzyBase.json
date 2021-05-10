@@ -1,0 +1,3389 @@
+{
+  "contractName": "GizzyBase",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "kittyId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "matronId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "sireId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "genes",
+          "type": "uint256"
+        }
+      ],
+      "name": "Birth",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "cooldowns",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "kittyIndexToApproved",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "kittyIndexToOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "sireAllowedToAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"kittyId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"matronId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sireId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"genes\",\"type\":\"uint256\"}],\"name\":\"Birth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"cooldowns\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"kittyIndexToApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"kittyIndexToOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"sireAllowedToAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyBase.sol\":\"GizzyBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyAccessControl.sol\":{\"keccak256\":\"0xdd59f76ab13212e3fd633916831b07a62a8e88e5c6e5c721a139a27f57429630\",\"urls\":[\"bzz-raw://b17cdc5e21a4292eb36260302ee7d384e37531d3fa224475bcbe7422f70db44e\",\"dweb:/ipfs/QmUh7HBDKRS2bPSAW2taGirfSq49raMnnegJAJKtKGRwWR\"]},\"/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyBase.sol\":{\"keccak256\":\"0x083a74ac1b6d703e70dc9823aebf666b8f65c242110e113240806f58252a0357\",\"urls\":[\"bzz-raw://2c0e8574ebe87e74c138786933f7cc53c8a9d501d6ad750517f7840b930176ed\",\"dweb:/ipfs/QmNebSroX2bU14bGM7App4wp2apTL9HGLY6Pi2DiVNJDYH\"]}},\"version\":1}",
+  "bytecode": "0x6080604052604051806101c00160405280603c63ffffffff1663ffffffff168152602001607863ffffffff1663ffffffff16815260200161012c63ffffffff1663ffffffff16815260200161025863ffffffff1663ffffffff16815260200161070863ffffffff1663ffffffff168152602001610e1063ffffffff1663ffffffff168152602001611c2063ffffffff1663ffffffff16815260200161384063ffffffff1663ffffffff16815260200161708063ffffffff1663ffffffff16815260200161e10063ffffffff1663ffffffff1681526020016201518063ffffffff1663ffffffff1681526020016202a30063ffffffff1663ffffffff1681526020016205460063ffffffff1663ffffffff16815260200162093a8063ffffffff1663ffffffff16815250600090600e61013892919061014b565b5034801561014557600080fd5b50610221565b82600e6007016008900481019282156101dd5791602002820160005b838211156101ab57835183826101000a81548163ffffffff021916908363ffffffff1602179055509260200192600401602081600301049283019260010302610167565b80156101db5782816101000a81549063ffffffff02191690556004016020816003010492830192600103026101ab565b505b5090506101ea91906101ee565b5090565b61021e91905b8082111561021a57600081816101000a81549063ffffffff0219169055506001016101f4565b5090565b90565b6102e4806102306000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806346116e6f14610051578063481af3d3146100bf5780639d6fac6f1461012d578063a45f4bfc1461017b575b600080fd5b61007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506101e9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100eb600480360360208110156100d557600080fd5b810190808035906020019092919050505061021c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101596004803603602081101561014357600080fd5b810190808035906020019092919050505061024f565b604051808263ffffffff1663ffffffff16815260200191505060405180910390f35b6101a76004803603602081101561019157600080fd5b810190808035906020019092919050505061027c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60066020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60056020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600081600e811061025c57fe5b60089182820401919006600402915054906101000a900463ffffffff1681565b60036020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200997c31a7e2a9d8551da1395002929ba84e1b0f46081f7530d4a300d5acfeaf464736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806346116e6f14610051578063481af3d3146100bf5780639d6fac6f1461012d578063a45f4bfc1461017b575b600080fd5b61007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506101e9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100eb600480360360208110156100d557600080fd5b810190808035906020019092919050505061021c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101596004803603602081101561014357600080fd5b810190808035906020019092919050505061024f565b604051808263ffffffff1663ffffffff16815260200191505060405180910390f35b6101a76004803603602081101561019157600080fd5b810190808035906020019092919050505061027c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60066020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60056020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600081600e811061025c57fe5b60089182820401919006600402915054906101000a900463ffffffff1681565b60036020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158200997c31a7e2a9d8551da1395002929ba84e1b0f46081f7530d4a300d5acfeaf464736f6c63430005100032",
+  "sourceMap": "102:1523:1:-;;;830:337;;;;;;;;873:9;830:337;;;;;;;;896:9;830:337;;;;;;;;919:9;830:337;;;;;;;;942:10;830:337;;;;;;;;966:10;830:337;;;;;;;;990:7;830:337;;;;;;;;1011:7;830:337;;;;;;;;1032:7;830:337;;;;;;;;1053:7;830:337;;;;;;;;1074:8;830:337;;;;;;;;1096:6;830:337;;;;;;;;1116:6;830:337;;;;;;;;1136:6;830:337;;;;;;;;1156:6;830:337;;;;;;;;;;;;;;;:::i;:::-;;102:1523;8:9:-1;5:2;;;30:1;27;20:12;5:2;102:1523:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "102:1523:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;102:1523:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1364:56;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1364:56:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1303;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1303:56:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;830:337;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;830:337:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1192:53;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1192:53:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1364:56;;;;;;;;;;;;;;;;;;;;;;:::o;1303:::-;;;;;;;;;;;;;;;;;;;;;;:::o;830:337::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1192:53::-;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\nimport \"./GizzyAccessControl.sol\";\n\ncontract GizzyBase {\n  \n  // @dev the Birth event is fired whenever a new kitten comes into existence. This \n  // includes cats created through giveBirth method and also newly minted gen cats\n  event Birth(address indexed owner, uint256 kittyId, uint256 matronId, uint256 sireId, uint256 genes);\n\n  // @dev Transfer event as defined in current draft of ERC721. Emitted every time a kitten\n  // ownership is assigned, including births.\n  event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\n\n  struct Gizzy {\n    uint256 genes;\n    uint64 birthTime;\n    uint64 cooldownEndTime;\n    uint32 matronId;\n    uint32 sireId;\n    uint32 siringWithId;\n    uint16 cooldownIndex;\n    uint16 generation;\n  }\n\n  uint32[14] public cooldowns = [\n    uint32(1 minutes),\n    uint32(2 minutes),\n    uint32(5 minutes),\n    uint32(10 minutes),\n    uint32(30 minutes),\n    uint32(1 hours),\n    uint32(2 hours),\n    uint32(4 hours),\n    uint32(8 hours),\n    uint32(16 hours),\n    uint32(1 days),\n    uint32(2 days),\n    uint32(4 days),\n    uint32(7 days)\n  ];\n\n  Gizzy[] gizzies;\n\n  mapping (uint256 => address) public kittyIndexToOwner;\n\n  mapping (address => uint256) ownershipTokenCount;\n\n  mapping (uint256 => address) public kittyIndexToApproved;\n\n  mapping (uint256 => address) public sireAllowedToAddress;\n\n  //function _transfer\n\n  //function _createKitty\n\n  // when u figure out how and where _createKitty is used, figure out how to create and use a \n  // _createItem function and everything that uses it\n\n}\n",
+  "sourcePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyBase.sol",
+  "ast": {
+    "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyBase.sol",
+    "exportedSymbols": {
+      "GizzyBase": [
+        292
+      ]
+    },
+    "id": 293,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 187,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyAccessControl.sol",
+        "file": "./GizzyAccessControl.sol",
+        "id": 188,
+        "nodeType": "ImportDirective",
+        "scope": 293,
+        "sourceUnit": 186,
+        "src": "66:34:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 292,
+        "linearizedBaseContracts": [
+          292
+        ],
+        "name": "GizzyBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 200,
+            "name": "Birth",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 190,
+                  "indexed": true,
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "308:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 192,
+                  "indexed": false,
+                  "name": "kittyId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "331:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 194,
+                  "indexed": false,
+                  "name": "matronId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "348:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 193,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 196,
+                  "indexed": false,
+                  "name": "sireId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "366:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 195,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 198,
+                  "indexed": false,
+                  "name": "genes",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "382:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:89:1"
+            },
+            "src": "296:101:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 208,
+            "name": "Transfer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 202,
+                  "indexed": true,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "554:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 204,
+                  "indexed": true,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "576:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 203,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "576:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 206,
+                  "indexed": true,
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "596:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 205,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "596:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "553:67:1"
+            },
+            "src": "539:82:1"
+          },
+          {
+            "canonicalName": "GizzyBase.Gizzy",
+            "id": 225,
+            "members": [
+              {
+                "constant": false,
+                "id": 210,
+                "name": "genes",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "644:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 209,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "644:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 212,
+                "name": "birthTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "663:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 211,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "663:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 214,
+                "name": "cooldownEndTime",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "685:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 213,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "685:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 216,
+                "name": "matronId",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "713:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 215,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "713:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 218,
+                "name": "sireId",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "734:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 217,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "734:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 220,
+                "name": "siringWithId",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "753:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 219,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "753:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 222,
+                "name": "cooldownIndex",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "778:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint16",
+                  "typeString": "uint16"
+                },
+                "typeName": {
+                  "id": 221,
+                  "name": "uint16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "778:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 224,
+                "name": "generation",
+                "nodeType": "VariableDeclaration",
+                "scope": 225,
+                "src": "804:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint16",
+                  "typeString": "uint16"
+                },
+                "typeName": {
+                  "id": 223,
+                  "name": "uint16",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "804:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Gizzy",
+            "nodeType": "StructDefinition",
+            "scope": 292,
+            "src": "625:201:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 272,
+            "name": "cooldowns",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "830:337:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint32_$14_storage",
+              "typeString": "uint32[14]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 226,
+                "name": "uint32",
+                "nodeType": "ElementaryTypeName",
+                "src": "830:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                }
+              },
+              "id": 228,
+              "length": {
+                "argumentTypes": null,
+                "hexValue": "3134",
+                "id": 227,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "837:2:1",
+                "subdenomination": null,
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_14_by_1",
+                  "typeString": "int_const 14"
+                },
+                "value": "14"
+              },
+              "nodeType": "ArrayTypeName",
+              "src": "830:10:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint32_$14_storage_ptr",
+                "typeString": "uint32[14]"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "components": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 230,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "873:9:1",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_60_by_1",
+                        "typeString": "int_const 60"
+                      },
+                      "value": "1"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_60_by_1",
+                        "typeString": "int_const 60"
+                      }
+                    ],
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "866:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 231,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "866:17:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 233,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "896:9:1",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_120_by_1",
+                        "typeString": "int_const 120"
+                      },
+                      "value": "2"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_120_by_1",
+                        "typeString": "int_const 120"
+                      }
+                    ],
+                    "id": 232,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "889:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 234,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "889:17:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "35",
+                      "id": 236,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "919:9:1",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_300_by_1",
+                        "typeString": "int_const 300"
+                      },
+                      "value": "5"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_300_by_1",
+                        "typeString": "int_const 300"
+                      }
+                    ],
+                    "id": 235,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "912:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 237,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "912:17:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "3130",
+                      "id": 239,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "942:10:1",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_600_by_1",
+                        "typeString": "int_const 600"
+                      },
+                      "value": "10"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_600_by_1",
+                        "typeString": "int_const 600"
+                      }
+                    ],
+                    "id": 238,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "935:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 240,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "935:18:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "3330",
+                      "id": 242,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "966:10:1",
+                      "subdenomination": "minutes",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1800_by_1",
+                        "typeString": "int_const 1800"
+                      },
+                      "value": "30"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_1800_by_1",
+                        "typeString": "int_const 1800"
+                      }
+                    ],
+                    "id": 241,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "959:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 243,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "959:18:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 245,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "990:7:1",
+                      "subdenomination": "hours",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3600_by_1",
+                        "typeString": "int_const 3600"
+                      },
+                      "value": "1"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_3600_by_1",
+                        "typeString": "int_const 3600"
+                      }
+                    ],
+                    "id": 244,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "983:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 246,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "983:15:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 248,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1011:7:1",
+                      "subdenomination": "hours",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_7200_by_1",
+                        "typeString": "int_const 7200"
+                      },
+                      "value": "2"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_7200_by_1",
+                        "typeString": "int_const 7200"
+                      }
+                    ],
+                    "id": 247,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1004:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 249,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1004:15:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "34",
+                      "id": 251,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1032:7:1",
+                      "subdenomination": "hours",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_14400_by_1",
+                        "typeString": "int_const 14400"
+                      },
+                      "value": "4"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_14400_by_1",
+                        "typeString": "int_const 14400"
+                      }
+                    ],
+                    "id": 250,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1025:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 252,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1025:15:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "38",
+                      "id": 254,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1053:7:1",
+                      "subdenomination": "hours",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_28800_by_1",
+                        "typeString": "int_const 28800"
+                      },
+                      "value": "8"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_28800_by_1",
+                        "typeString": "int_const 28800"
+                      }
+                    ],
+                    "id": 253,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1046:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 255,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1046:15:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "3136",
+                      "id": 257,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1074:8:1",
+                      "subdenomination": "hours",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_57600_by_1",
+                        "typeString": "int_const 57600"
+                      },
+                      "value": "16"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_57600_by_1",
+                        "typeString": "int_const 57600"
+                      }
+                    ],
+                    "id": 256,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1067:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 258,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1067:16:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 260,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1096:6:1",
+                      "subdenomination": "days",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_86400_by_1",
+                        "typeString": "int_const 86400"
+                      },
+                      "value": "1"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_86400_by_1",
+                        "typeString": "int_const 86400"
+                      }
+                    ],
+                    "id": 259,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1089:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 261,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1089:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "32",
+                      "id": 263,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1116:6:1",
+                      "subdenomination": "days",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_172800_by_1",
+                        "typeString": "int_const 172800"
+                      },
+                      "value": "2"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_172800_by_1",
+                        "typeString": "int_const 172800"
+                      }
+                    ],
+                    "id": 262,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1109:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 264,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1109:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "34",
+                      "id": 266,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1136:6:1",
+                      "subdenomination": "days",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_345600_by_1",
+                        "typeString": "int_const 345600"
+                      },
+                      "value": "4"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_345600_by_1",
+                        "typeString": "int_const 345600"
+                      }
+                    ],
+                    "id": 265,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1129:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 267,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1129:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "37",
+                      "id": 269,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1156:6:1",
+                      "subdenomination": "days",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_604800_by_1",
+                        "typeString": "int_const 604800"
+                      },
+                      "value": "7"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_rational_604800_by_1",
+                        "typeString": "int_const 604800"
+                      }
+                    ],
+                    "id": 268,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "1149:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_uint32_$",
+                      "typeString": "type(uint32)"
+                    },
+                    "typeName": "uint32"
+                  },
+                  "id": 270,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "1149:14:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                }
+              ],
+              "id": 271,
+              "isConstant": false,
+              "isInlineArray": true,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "nodeType": "TupleExpression",
+              "src": "860:307:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint32_$14_memory_ptr",
+                "typeString": "uint32[14] memory"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 275,
+            "name": "gizzies",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "1172:15:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Gizzy_$225_storage_$dyn_storage",
+              "typeString": "struct GizzyBase.Gizzy[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 273,
+                "name": "Gizzy",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 225,
+                "src": "1172:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Gizzy_$225_storage_ptr",
+                  "typeString": "struct GizzyBase.Gizzy"
+                }
+              },
+              "id": 274,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "1172:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Gizzy_$225_storage_$dyn_storage_ptr",
+                "typeString": "struct GizzyBase.Gizzy[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 279,
+            "name": "kittyIndexToOwner",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "1192:53:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 278,
+              "keyType": {
+                "id": 276,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1201:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1192:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 277,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1212:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 283,
+            "name": "ownershipTokenCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "1250:48:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 282,
+              "keyType": {
+                "id": 280,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1259:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1250:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 281,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1270:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 287,
+            "name": "kittyIndexToApproved",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "1303:56:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 286,
+              "keyType": {
+                "id": 284,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1312:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1303:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 285,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1323:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 291,
+            "name": "sireAllowedToAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 292,
+            "src": "1364:56:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 290,
+              "keyType": {
+                "id": 288,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1373:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1364:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 289,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1384:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 293,
+        "src": "102:1523:1"
+      }
+    ],
+    "src": "32:1594:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyBase.sol",
+      "exportedSymbols": {
+        "GizzyBase": [
+          292
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 187,
+        "name": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 186,
+          "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/GizzyAccessControl.sol",
+          "file": "./GizzyAccessControl.sol",
+          "scope": 293,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 188,
+        "name": "ImportDirective",
+        "src": "66:34:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            292
+          ],
+          "name": "GizzyBase",
+          "scope": 293
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Birth"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "owner",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 189,
+                        "name": "ElementaryTypeName",
+                        "src": "308:7:1"
+                      }
+                    ],
+                    "id": 190,
+                    "name": "VariableDeclaration",
+                    "src": "308:21:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "kittyId",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 191,
+                        "name": "ElementaryTypeName",
+                        "src": "331:7:1"
+                      }
+                    ],
+                    "id": 192,
+                    "name": "VariableDeclaration",
+                    "src": "331:15:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "matronId",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 193,
+                        "name": "ElementaryTypeName",
+                        "src": "348:7:1"
+                      }
+                    ],
+                    "id": 194,
+                    "name": "VariableDeclaration",
+                    "src": "348:16:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "sireId",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 195,
+                        "name": "ElementaryTypeName",
+                        "src": "366:7:1"
+                      }
+                    ],
+                    "id": 196,
+                    "name": "VariableDeclaration",
+                    "src": "366:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "genes",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 197,
+                        "name": "ElementaryTypeName",
+                        "src": "382:7:1"
+                      }
+                    ],
+                    "id": 198,
+                    "name": "VariableDeclaration",
+                    "src": "382:13:1"
+                  }
+                ],
+                "id": 199,
+                "name": "ParameterList",
+                "src": "307:89:1"
+              }
+            ],
+            "id": 200,
+            "name": "EventDefinition",
+            "src": "296:101:1"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Transfer"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "from",
+                      "scope": 208,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 201,
+                        "name": "ElementaryTypeName",
+                        "src": "554:7:1"
+                      }
+                    ],
+                    "id": 202,
+                    "name": "VariableDeclaration",
+                    "src": "554:20:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "to",
+                      "scope": 208,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 203,
+                        "name": "ElementaryTypeName",
+                        "src": "576:7:1"
+                      }
+                    ],
+                    "id": 204,
+                    "name": "VariableDeclaration",
+                    "src": "576:18:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "tokenId",
+                      "scope": 208,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 205,
+                        "name": "ElementaryTypeName",
+                        "src": "596:7:1"
+                      }
+                    ],
+                    "id": 206,
+                    "name": "VariableDeclaration",
+                    "src": "596:23:1"
+                  }
+                ],
+                "id": 207,
+                "name": "ParameterList",
+                "src": "553:67:1"
+              }
+            ],
+            "id": 208,
+            "name": "EventDefinition",
+            "src": "539:82:1"
+          },
+          {
+            "attributes": {
+              "canonicalName": "GizzyBase.Gizzy",
+              "name": "Gizzy",
+              "scope": 292,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "genes",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 209,
+                    "name": "ElementaryTypeName",
+                    "src": "644:7:1"
+                  }
+                ],
+                "id": 210,
+                "name": "VariableDeclaration",
+                "src": "644:13:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "birthTime",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint64",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint64",
+                      "type": "uint64"
+                    },
+                    "id": 211,
+                    "name": "ElementaryTypeName",
+                    "src": "663:6:1"
+                  }
+                ],
+                "id": 212,
+                "name": "VariableDeclaration",
+                "src": "663:16:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "cooldownEndTime",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint64",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint64",
+                      "type": "uint64"
+                    },
+                    "id": 213,
+                    "name": "ElementaryTypeName",
+                    "src": "685:6:1"
+                  }
+                ],
+                "id": 214,
+                "name": "VariableDeclaration",
+                "src": "685:22:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "matronId",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint32",
+                      "type": "uint32"
+                    },
+                    "id": 215,
+                    "name": "ElementaryTypeName",
+                    "src": "713:6:1"
+                  }
+                ],
+                "id": 216,
+                "name": "VariableDeclaration",
+                "src": "713:15:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "sireId",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint32",
+                      "type": "uint32"
+                    },
+                    "id": 217,
+                    "name": "ElementaryTypeName",
+                    "src": "734:6:1"
+                  }
+                ],
+                "id": 218,
+                "name": "VariableDeclaration",
+                "src": "734:13:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "siringWithId",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint32",
+                      "type": "uint32"
+                    },
+                    "id": 219,
+                    "name": "ElementaryTypeName",
+                    "src": "753:6:1"
+                  }
+                ],
+                "id": 220,
+                "name": "VariableDeclaration",
+                "src": "753:19:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "cooldownIndex",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint16",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint16",
+                      "type": "uint16"
+                    },
+                    "id": 221,
+                    "name": "ElementaryTypeName",
+                    "src": "778:6:1"
+                  }
+                ],
+                "id": 222,
+                "name": "VariableDeclaration",
+                "src": "778:20:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "generation",
+                  "scope": 225,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint16",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint16",
+                      "type": "uint16"
+                    },
+                    "id": 223,
+                    "name": "ElementaryTypeName",
+                    "src": "804:6:1"
+                  }
+                ],
+                "id": 224,
+                "name": "VariableDeclaration",
+                "src": "804:17:1"
+              }
+            ],
+            "id": 225,
+            "name": "StructDefinition",
+            "src": "625:201:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "cooldowns",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint32[14]",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "uint32[14]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint32",
+                      "type": "uint32"
+                    },
+                    "id": 226,
+                    "name": "ElementaryTypeName",
+                    "src": "830:6:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "hexvalue": "3134",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "subdenomination": null,
+                      "token": "number",
+                      "type": "int_const 14",
+                      "value": "14"
+                    },
+                    "id": 227,
+                    "name": "Literal",
+                    "src": "837:2:1"
+                  }
+                ],
+                "id": 228,
+                "name": "ArrayTypeName",
+                "src": "830:10:1"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isInlineArray": true,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "type": "uint32[14] memory"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_60_by_1",
+                              "typeString": "int_const 60"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 229,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "866:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "31",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "minutes",
+                          "token": "number",
+                          "type": "int_const 60",
+                          "value": "1"
+                        },
+                        "id": 230,
+                        "name": "Literal",
+                        "src": "873:9:1"
+                      }
+                    ],
+                    "id": 231,
+                    "name": "FunctionCall",
+                    "src": "866:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_120_by_1",
+                              "typeString": "int_const 120"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 232,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "889:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "32",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "minutes",
+                          "token": "number",
+                          "type": "int_const 120",
+                          "value": "2"
+                        },
+                        "id": 233,
+                        "name": "Literal",
+                        "src": "896:9:1"
+                      }
+                    ],
+                    "id": 234,
+                    "name": "FunctionCall",
+                    "src": "889:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_300_by_1",
+                              "typeString": "int_const 300"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 235,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "912:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "35",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "minutes",
+                          "token": "number",
+                          "type": "int_const 300",
+                          "value": "5"
+                        },
+                        "id": 236,
+                        "name": "Literal",
+                        "src": "919:9:1"
+                      }
+                    ],
+                    "id": 237,
+                    "name": "FunctionCall",
+                    "src": "912:17:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_600_by_1",
+                              "typeString": "int_const 600"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 238,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "935:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "3130",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "minutes",
+                          "token": "number",
+                          "type": "int_const 600",
+                          "value": "10"
+                        },
+                        "id": 239,
+                        "name": "Literal",
+                        "src": "942:10:1"
+                      }
+                    ],
+                    "id": 240,
+                    "name": "FunctionCall",
+                    "src": "935:18:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_1800_by_1",
+                              "typeString": "int_const 1800"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 241,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "959:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "3330",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "minutes",
+                          "token": "number",
+                          "type": "int_const 1800",
+                          "value": "30"
+                        },
+                        "id": 242,
+                        "name": "Literal",
+                        "src": "966:10:1"
+                      }
+                    ],
+                    "id": 243,
+                    "name": "FunctionCall",
+                    "src": "959:18:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_3600_by_1",
+                              "typeString": "int_const 3600"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 244,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "983:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "31",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "hours",
+                          "token": "number",
+                          "type": "int_const 3600",
+                          "value": "1"
+                        },
+                        "id": 245,
+                        "name": "Literal",
+                        "src": "990:7:1"
+                      }
+                    ],
+                    "id": 246,
+                    "name": "FunctionCall",
+                    "src": "983:15:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_7200_by_1",
+                              "typeString": "int_const 7200"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 247,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1004:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "32",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "hours",
+                          "token": "number",
+                          "type": "int_const 7200",
+                          "value": "2"
+                        },
+                        "id": 248,
+                        "name": "Literal",
+                        "src": "1011:7:1"
+                      }
+                    ],
+                    "id": 249,
+                    "name": "FunctionCall",
+                    "src": "1004:15:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_14400_by_1",
+                              "typeString": "int_const 14400"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 250,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1025:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "34",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "hours",
+                          "token": "number",
+                          "type": "int_const 14400",
+                          "value": "4"
+                        },
+                        "id": 251,
+                        "name": "Literal",
+                        "src": "1032:7:1"
+                      }
+                    ],
+                    "id": 252,
+                    "name": "FunctionCall",
+                    "src": "1025:15:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_28800_by_1",
+                              "typeString": "int_const 28800"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 253,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1046:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "38",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "hours",
+                          "token": "number",
+                          "type": "int_const 28800",
+                          "value": "8"
+                        },
+                        "id": 254,
+                        "name": "Literal",
+                        "src": "1053:7:1"
+                      }
+                    ],
+                    "id": 255,
+                    "name": "FunctionCall",
+                    "src": "1046:15:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_57600_by_1",
+                              "typeString": "int_const 57600"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 256,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1067:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "3136",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "hours",
+                          "token": "number",
+                          "type": "int_const 57600",
+                          "value": "16"
+                        },
+                        "id": 257,
+                        "name": "Literal",
+                        "src": "1074:8:1"
+                      }
+                    ],
+                    "id": 258,
+                    "name": "FunctionCall",
+                    "src": "1067:16:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_86400_by_1",
+                              "typeString": "int_const 86400"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 259,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1089:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "31",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "days",
+                          "token": "number",
+                          "type": "int_const 86400",
+                          "value": "1"
+                        },
+                        "id": 260,
+                        "name": "Literal",
+                        "src": "1096:6:1"
+                      }
+                    ],
+                    "id": 261,
+                    "name": "FunctionCall",
+                    "src": "1089:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_172800_by_1",
+                              "typeString": "int_const 172800"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 262,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1109:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "32",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "days",
+                          "token": "number",
+                          "type": "int_const 172800",
+                          "value": "2"
+                        },
+                        "id": 263,
+                        "name": "Literal",
+                        "src": "1116:6:1"
+                      }
+                    ],
+                    "id": 264,
+                    "name": "FunctionCall",
+                    "src": "1109:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_345600_by_1",
+                              "typeString": "int_const 345600"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 265,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1129:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "34",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "days",
+                          "token": "number",
+                          "type": "int_const 345600",
+                          "value": "4"
+                        },
+                        "id": 266,
+                        "name": "Literal",
+                        "src": "1136:6:1"
+                      }
+                    ],
+                    "id": 267,
+                    "name": "FunctionCall",
+                    "src": "1129:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "isStructConstructorCall": false,
+                      "lValueRequested": false,
+                      "names": [
+                        null
+                      ],
+                      "type": "uint32",
+                      "type_conversion": true
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_604800_by_1",
+                              "typeString": "int_const 604800"
+                            }
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "type": "type(uint32)",
+                          "value": "uint32"
+                        },
+                        "id": 268,
+                        "name": "ElementaryTypeNameExpression",
+                        "src": "1149:6:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "37",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": "days",
+                          "token": "number",
+                          "type": "int_const 604800",
+                          "value": "7"
+                        },
+                        "id": 269,
+                        "name": "Literal",
+                        "src": "1156:6:1"
+                      }
+                    ],
+                    "id": 270,
+                    "name": "FunctionCall",
+                    "src": "1149:14:1"
+                  }
+                ],
+                "id": 271,
+                "name": "TupleExpression",
+                "src": "860:307:1"
+              }
+            ],
+            "id": 272,
+            "name": "VariableDeclaration",
+            "src": "830:337:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "gizzies",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct GizzyBase.Gizzy[]",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct GizzyBase.Gizzy[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Gizzy",
+                      "referencedDeclaration": 225,
+                      "type": "struct GizzyBase.Gizzy"
+                    },
+                    "id": 273,
+                    "name": "UserDefinedTypeName",
+                    "src": "1172:5:1"
+                  }
+                ],
+                "id": 274,
+                "name": "ArrayTypeName",
+                "src": "1172:7:1"
+              }
+            ],
+            "id": 275,
+            "name": "VariableDeclaration",
+            "src": "1172:15:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "kittyIndexToOwner",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => address)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => address)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 276,
+                    "name": "ElementaryTypeName",
+                    "src": "1201:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 277,
+                    "name": "ElementaryTypeName",
+                    "src": "1212:7:1"
+                  }
+                ],
+                "id": 278,
+                "name": "Mapping",
+                "src": "1192:28:1"
+              }
+            ],
+            "id": 279,
+            "name": "VariableDeclaration",
+            "src": "1192:53:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ownershipTokenCount",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => uint256)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => uint256)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 280,
+                    "name": "ElementaryTypeName",
+                    "src": "1259:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 281,
+                    "name": "ElementaryTypeName",
+                    "src": "1270:7:1"
+                  }
+                ],
+                "id": 282,
+                "name": "Mapping",
+                "src": "1250:28:1"
+              }
+            ],
+            "id": 283,
+            "name": "VariableDeclaration",
+            "src": "1250:48:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "kittyIndexToApproved",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => address)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => address)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 284,
+                    "name": "ElementaryTypeName",
+                    "src": "1312:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 285,
+                    "name": "ElementaryTypeName",
+                    "src": "1323:7:1"
+                  }
+                ],
+                "id": 286,
+                "name": "Mapping",
+                "src": "1303:28:1"
+              }
+            ],
+            "id": 287,
+            "name": "VariableDeclaration",
+            "src": "1303:56:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "sireAllowedToAddress",
+              "scope": 292,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => address)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => address)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 288,
+                    "name": "ElementaryTypeName",
+                    "src": "1373:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 289,
+                    "name": "ElementaryTypeName",
+                    "src": "1384:7:1"
+                  }
+                ],
+                "id": 290,
+                "name": "Mapping",
+                "src": "1364:28:1"
+              }
+            ],
+            "id": 291,
+            "name": "VariableDeclaration",
+            "src": "1364:56:1"
+          }
+        ],
+        "id": 292,
+        "name": "ContractDefinition",
+        "src": "102:1523:1"
+      }
+    ],
+    "id": 293,
+    "name": "SourceUnit",
+    "src": "32:1594:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-05-10T16:54:59.074Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
