@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "./GizzyOwnership.sol";
+import "./GizzyAuction.sol";
 
-contract GizzyMinting is GizzyOwnership{
+contract GizzyMinting is GizzyAuction{
   
   // limits the number of gizzies the contract owner can ever create
   uint256 public promoCreationLimit = 5000;
@@ -13,7 +13,7 @@ contract GizzyMinting is GizzyOwnership{
   uint256 public gen0StartingPrice = 1e10;
   uint256 public gen0AuctionDuration = 1 days;
 
-  // Counts the number of cats the contract owner has created
+  // Counts the number of gizzies the contract owner has created
   uint256 public promoCreatedCount;
   uint256 public gen0CreatedCount;
 

@@ -8,8 +8,8 @@ contract GizzyBase is GizzyAccessControl, ERC721{
   
   constructor() ERC721('Gizzy', 'GZY') {
   }
-  // @dev the Birth event is fired whenever a new kitten comes into existence. This 
-  // includes cats created through giveBirth method and also newly minted gen cats
+  // @dev the Birth event is fired whenever a new gizzy comes into existence. This 
+  // includes gizzies created through giveBirth method and also newly minted gen0 cats
   event Birth(address indexed owner, uint256 kittyId, uint256 matronId, uint256 sireId, uint256 genes);
 
   // @dev Transfer event as defined in current draft of ERC721. Emitted every time a kitten
@@ -44,27 +44,14 @@ contract GizzyBase is GizzyAccessControl, ERC721{
     uint32(7 days)
   ];
 
+  // an array to keep track of all the gizzy structs
   Gizzy[] gizzies;
 
-  mapping (uint256 => address) public gizzyIndexToOwner;
+  //mapping (uint256 => address) public gizzyIndexToOwner;
 
-  mapping (address => uint256) ownershipTokenCount;
+  //mapping (uint256 => address) public gizzyIndexToApproved;
 
-  mapping (uint256 => address) public gizzyIndexToApproved;
-
-  mapping (uint256 => address) public sireAllowedToAddress;
-
-  function _transfer(address _from, address _to, uint256 _tokenId) internal override{
-    ownershipTokenCount[_to] ++;
-    gizzyIndexToOwner[_tokenId] = _to;
-    if (_from != address(0)) {
-      ownershipTokenCount[_from] ++;
-      delete sireAllowedToAddress[_tokenId];
-      delete gizzyIndexToApproved[_tokenId];
-    }
-
-    emit Transfer(_from, _to, _tokenId);
-  }
+  //mapping (uint256 => address) public sireAllowedToAddress;
 
   function _createGizzy(
     uint256 _matronId,
@@ -105,7 +92,8 @@ contract GizzyBase is GizzyAccessControl, ERC721{
       _gizzy.genes
     );
 
-    _transfer(address(0), _owner, newGizzyId);
+    _safeMint(_owner, newGizzyId);
+    // _setTokenURI(newGizzyId, tokenURI)
 
     return newGizzyId;
 
