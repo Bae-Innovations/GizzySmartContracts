@@ -6,10 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract GizzyWireframe is ERC721{
 
     constructor() ERC721('Gizzy', 'GZY') {
-    paused = false;
-    ceoAddress = msg.sender;
-    cooAddress = msg.sender;
-    _createGizzy(0,0,0,uint256(0),address(0));
+    _createGizzy(0,0,0,uint256(0),msg.sender);
     }
 
     event Birth(address indexed owner, uint256 kittyId, uint256 matronId, uint256 sireId, uint256 genes);
@@ -112,10 +109,40 @@ contract GizzyWireframe is ERC721{
         bool auctionEnded;
     }
 
-    Auction[] auctions;
+    Auction[] public auctions;
+    mapping (uint256 => uint256) public gizzyToAuction;
 
     event AuctionStarted(address owner, uint256 gizzyId);
     event Bid(address bidder, uint256 auctionId, uint256 amount);
+
+    //function _isOnAuction(uint256 _gizzyId) internal {
+        // return if the gizzy is on auction or not
+        // how am i keeping track of gizzy on auction?
+    //}
+    
+    function getAuction(uint256 _auctionId) 
+    public 
+    view 
+    returns (
+        address owner,
+        uint256 gizzyId,
+        uint256 highestBid,
+        address payable highestBidder,
+        uint256 duration,
+        uint256 creationTime,
+        bool auctionEnded
+    )
+    {
+        Auction storage _auction = auctions[_auctionId];
+        
+        owner = _auction.owner;
+        gizzyId = _auction.gizzyId;
+        highestBid = _auction.highestBid;
+        highestBidder = _auction.highestBidder;
+        duration = _auction.duration;
+        creationTime = _auction.creationTime;
+        auctionEnded = _auction.auctionEnded;
+    }
 
     function startAuction(uint256 _gizzyId, uint256 _startingPrice, uint256 _duration) public {
         // inputs: gizzyId, startingPrice, timeLimit
@@ -134,6 +161,7 @@ contract GizzyWireframe is ERC721{
         // send the gizzy to this contract
 
         auctions.push(_auction);
+        gizzyToAuction[_gizzyId] = auctions.length;
         
         emit AuctionStarted(msg.sender, _gizzyId);
         // emits an auction event
@@ -147,7 +175,7 @@ contract GizzyWireframe is ERC721{
 
         // refunds the previous bid to the previous owner
         // refund should not send any if address is (0)
-        _auction.highestBidder.transfer(address(this).balance);
+        _auction.highestBidder.transfer(_auction.highestBid);
         
         // places a bid
         _auction.highestBid = msg.value;
@@ -182,8 +210,8 @@ contract GizzyWireframe is ERC721{
         public 
         payable
     {
-        _owner = msg.sender;
-        _fee = msg.value;
+        address _owner = msg.sender;
+        uint256 _fee = msg.value;
 
         // requires requester to own the gizzy
         // requires the fee to be at or above the fee        
@@ -191,16 +219,10 @@ contract GizzyWireframe is ERC721{
         emit Breed(_matronId, _sireId, _owner);
     }
 
-    function GizzyBirth(address _owner, uint256 _genes, uint32 matronId, uint32 _sireId uint16 _generation)
-        public onlyCOO 
+    function GizzyBirth(address _owner, uint256 _genes, uint32 _matronId, uint32 _sireId, uint16 _generation)
+        public
     {
-        owner = _owner;
-        genes = _genes;
-        matronId = matronId;
-        sireId = sireId;
-        generation = _generation;
-
-        _createGizzy()
+        _createGizzy(_matronId, _sireId, _generation, _genes, _owner);
     }
     
 
@@ -220,10 +242,8 @@ contract GizzyWireframe is ERC721{
     uint256 public promoCreatedCount;
     uint256 public gen0CreatedCount;
 
-    function createPromoGizzy(uint256 _genes, address _owner) public onlyCOO {
-        if (_owner == address(0)) {
-        _owner = cooAddress;
-        }
+    function createPromoGizzy(uint256 _genes, address _owner) public {
+
         require(promoCreatedCount < promoCreationLimit);
         require(gen0CreatedCount < gen0CreationLimit);
     
