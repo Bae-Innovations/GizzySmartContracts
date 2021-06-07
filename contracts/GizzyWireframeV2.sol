@@ -7,6 +7,59 @@ contract GizzyWireframe is ERC721URIStorage{
 
     constructor() ERC721('Gizzy', 'GZY') {
         _createGizzy(0,0,0,msg.sender,false,"null");
+        ownerAddress = msg.sender;
+    }
+
+    address public ownerAddress;
+    address public serverAddress;
+
+    bool public paused = false;
+
+    modifier onlyOwner() {
+        require(msg.sender == ownerAddress);
+        _;
+    }
+
+    modifier onlyServer() {
+        require(msg.sender == serverAddress);
+        _;
+    }
+
+    function setOwner(address _newOwner) public onlyOwner {
+        require(_newOwner != address(0));
+
+        ownerAddress = _newOwner;
+    }
+
+
+    function setServer(address _newServer) public onlyOwner {
+        require(_newServer != address(0));
+
+        serverAddress = _newServer;
+    }
+
+    function withdrawBalance() external onlyOwner {
+        // keep track of actual balance and send that balance
+        // cfoAddress.transfer(this.balance);
+    }
+
+    modifier whenNotPaused() {
+        require(!paused);
+        _;
+    }
+
+    modifier whenPaused {
+        require(paused);
+        _;
+    }
+
+    function pause() public onlyOwner whenNotPaused {
+        paused = true;
+    }
+
+    function unpause() public onlyOwner whenPaused {
+        // can't unpause if contract was upgraded
+        paused = false;
     }
 
     event Birth(uint256 kittyId, uint256 matronId, uint256 sireId, address indexed owner, string tokenURI);
@@ -102,7 +155,7 @@ contract GizzyWireframe is ERC721URIStorage{
     uint256 public gen0CreatedCount;
 
     // called by admin
-    function createPromoGizzy(address _owner, bool _breedable, string memory _tokenURI) public {
+    function createPromoGizzy(address _owner, bool _breedable, string memory _tokenURI) public onlyOwner whenNotPaused {
 
         // set owner to whoever gizzy is being gifted
         // when promo gizzy is auctioned, gift to their own account and then start auction
