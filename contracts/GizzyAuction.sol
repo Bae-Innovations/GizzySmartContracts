@@ -19,7 +19,7 @@ contract GizzyAuction is GizzyBase {
     event Bid(address bidder, uint256 auctionId, uint256 amount);
 
     function startAuction(uint256 _gizzyId, uint256 _startingPrice, uint256 _duration) public {
-        // inputs: gizzyId, startingPrice, timeLimit
+        // inputs: gizzyId, startingPrice, endingPrice, duration
         // checks: if sender owns gizzy, if gizzy is free from auctions
         
         // creates auctions, sends gizzy to this contract, 
@@ -47,11 +47,30 @@ contract GizzyAuction is GizzyBase {
         // places a bid
         // refunds the previous bid to the previous owner
         // emits an event that bid has been placed
+        
+        // check if bid amount is correct or not
     }
 
-    function endAuction(uint256 auctionId) public {
+    function acceptBid() public {
+        // owner of an auction can accept a bid and end the auction by making all transfers
+    }
+
+    function cancelAuction(uint256 auctionId) public {
         // checks if the given auction is supposed to end
         // ends the auction if its supposed to end
+    }
+
+    function cancelBid() public {
+        // get refund for your bid if u want to cancel the offer before it is accepted
+    }
+
+    function refundBid() public {
+        // admin only
+        // sends refund to bidders account with minimum fee if 24 hours has passed
+    }
+
+    function getAuction() public {
+        // get auction with auction id
     }
 
 }

@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("GizzyCore");
+// const Migrations = artifacts.require("GizzyCore");
 
-module.exports = function (deployer) {
-  deployer.deploy(Migrations);
-};
+// module.exports = function (deployer) {
+//   deployer.deploy(Migrations);
+// };

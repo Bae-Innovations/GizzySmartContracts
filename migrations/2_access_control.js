@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("GizzyAccessControl");
+// const Migrations = artifacts.require("GizzyAccessControl");
 
-module.exports = function (deployer) {
-  deployer.deploy(Migrations);
-};
+// module.exports = function (deployer) {
+//   deployer.deploy(Migrations);
+// };

@@ -12,14 +12,14 @@ contract GizzyWireframe is ERC721{
     event Birth(address indexed owner, uint256 kittyId, uint256 matronId, uint256 sireId, uint256 genes);
 
     struct Gizzy {
-        uint256 genes;
         uint64 birthTime;
         uint64 cooldownEndTime;
         uint32 matronId;
         uint32 sireId;
         uint32 siringWithId;
-        uint16 cooldownIndex;
         uint16 generation;
+        uint8 cooldownIndex;
+        bool breedable;
     }
 
     uint32[14] public cooldowns = [
@@ -52,7 +52,7 @@ contract GizzyWireframe is ERC721{
         uint256 _matronId,
         uint256 _sireId,
         uint256 _generation,
-        uint256 _genes,
+        uint256 _tokenURI,
         address _owner
     )
         internal
@@ -71,7 +71,8 @@ contract GizzyWireframe is ERC721{
             sireId: uint32(_sireId),
             siringWithId: 0,
             cooldownIndex: 0,
-            generation: uint16(_generation)
+            generation: uint16(_generation),
+
         });
 
         gizzies.push(_gizzy);
@@ -100,12 +101,12 @@ contract GizzyWireframe is ERC721{
     //
 
     struct Auction{
-        address owner;
+        address payable owner;
         uint256 gizzyId;
         uint256 highestBid;
-        address payable highestBidder;
-        uint256 duration;
-        uint256 creationTime;
+        address highestBidder;
+        uint64 endTime;
+        uint64 creationTime;
         bool auctionEnded;
     }
 
@@ -203,7 +204,7 @@ contract GizzyWireframe is ERC721{
     //
     // Breeding Contract
     //
-    uint256 BreedingFee;
+    uint256 public BreedingFee;
     event Breed(uint256 matronId, uint256 sireId, address owner);
 
     function BreedGizzy(uint256 _matronId, uint256 _sireId) 
@@ -219,10 +220,13 @@ contract GizzyWireframe is ERC721{
         emit Breed(_matronId, _sireId, _owner);
     }
 
-    function GizzyBirth(address _owner, uint256 _genes, uint32 _matronId, uint32 _sireId, uint16 _generation)
+    // called by server
+    function GizzyBirth(uint32 _matronId, uint32 _sireId, uint32 _generation, uint256 _tokenURI, address _owner)
         public
     {
-        _createGizzy(_matronId, _sireId, _generation, _genes, _owner);
+        // create a gizzy and set its tokenURI
+        _createGizzy(_matronId, _sireId, _generation, _tokenURI, _owner);
+        
     }
     
 
@@ -230,6 +234,7 @@ contract GizzyWireframe is ERC721{
     //
     // Minting Contract
     //
+
     // limits the number of gizzies the contract owner can ever create
     uint256 public promoCreationLimit = 5000;
     uint256 public gen0CreationLimit = 50000;
@@ -242,7 +247,11 @@ contract GizzyWireframe is ERC721{
     uint256 public promoCreatedCount;
     uint256 public gen0CreatedCount;
 
-    function createPromoGizzy(uint256 _genes, address _owner) public {
+    // called by admin
+    function createPromoGizzy(uint256 _tokenURI, uint256 _genes, address _owner) public {
+
+        // set owner to whoever gizzy is being gifted
+        // when promo gizzy is auctioned, gift to their own account and then start auction
 
         require(promoCreatedCount < promoCreationLimit);
         require(gen0CreatedCount < gen0CreationLimit);
