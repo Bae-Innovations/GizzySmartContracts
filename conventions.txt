@@ -1,0 +1,20 @@
+Some conventions to follow when wokring on this project:
+
+Naming:
+GizzyBase is the initial contract deployed on the 17th June. After that, every update has to be named
+in this format: GizzyUpdate<number><name>. For example: GizzyUpdate1Auction.sol, GizzyUpdate2Breeding.sol etc.
+
+Versioning and Upgrading workflow:
+the master branch contains the repo that has been deployed and it has the build folder in it.
+when working on an update, create a new branch, rename the build folder, start working. this is
+done because build folder contains info on when and where the contract has been deployed. we need
+this info for production but not while in dev environment. so in the separate branch, developer 
+can freely delete the build file without worrying about info about production env getting lost.
+
+[IMPORTANT] Updating Contracts:
+a newer logic contract should inherit the latest logic contract. a migration file should be written 
+for the new logic contract
+
+Deployment:
+run migration file for the new logic contract. then change the implementation address on the 
+proxy contract
