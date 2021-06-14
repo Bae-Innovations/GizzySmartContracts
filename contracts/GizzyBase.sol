@@ -1,70 +1,70 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
-
+ 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
-
-contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
-
-    constructor() ERC721Upgradeable('Gizzy', 'GZY') {
+ 
+contract GizzyBase is ERC721URIStorageUpgradeable{
+ 
+    function initialize() public {
+        __ERC721_init("Gizzy", "GZY");
         ownerAddress = msg.sender;
         _createGizzy(0,0,0,msg.sender,false,"null");
     }
-
+ 
     address public ownerAddress;
     address public serverAddress;
-
+ 
     bool public paused = false;
-
+ 
     modifier onlyOwner() {
         require(msg.sender == ownerAddress);
         _;
     }
-
+ 
     modifier onlyServer() {
         require(msg.sender == serverAddress);
         _;
     }
-
+ 
     function setOwner(address _newOwner) public onlyOwner {
         require(_newOwner != address(0));
-
+ 
         ownerAddress = _newOwner;
     }
-
-
+ 
+ 
     function setServer(address _newServer) public onlyOwner {
         require(_newServer != address(0));
-
+ 
         serverAddress = _newServer;
     }
-
+ 
     function withdrawBalance() external onlyOwner {
         // keep track of actual balance and send that balance
         // cfoAddress.transfer(this.balance);
     }
-
+ 
     modifier whenNotPaused() {
         require(!paused);
         _;
     }
-
+ 
     modifier whenPaused {
         require(paused);
         _;
     }
-
+ 
     function pause() public onlyOwner whenNotPaused {
         paused = true;
     }
-
+ 
     function unpause() public onlyOwner whenPaused {
         // can't unpause if contract was upgraded
         paused = false;
     }
-
+ 
     event Birth(uint256 kittyId, uint256 matronId, uint256 sireId, address indexed owner, string tokenURI);
-
+ 
     struct Gizzy {
         uint64 birthTime;
         uint64 cooldownEndTime;
@@ -75,7 +75,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
         uint8 cooldownIndex;
         bool breedable;
     }
-
+ 
     uint32[14] public cooldowns = [
         uint32(1 minutes),
         uint32(2 minutes),
@@ -92,10 +92,10 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
         uint32(4 days),
         uint32(7 days)
     ];
-
+ 
     // an array to keep track of all the gizzy structs
     Gizzy[] gizzies;
-
+ 
     function _createGizzy(
         uint256 _matronId,
         uint256 _sireId,
@@ -106,7 +106,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
     )
         internal
         returns (uint)
-
+ 
     {
         require(_matronId <= 4294967295);
         require(_sireId <= 4294967295);
@@ -122,12 +122,12 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
             generation: uint16(_generation),
             breedable: bool (_breedable)
         });
-
+ 
         gizzies.push(_gizzy);
         uint256 newGizzyId = gizzies.length - 1;
-
+ 
         require(newGizzyId <= 4294967295);
-
+ 
         emit Birth(
         newGizzyId,
         uint256(_gizzy.matronId),
@@ -135,32 +135,32 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
         _owner,
         string(_tokenURI)
         );
-
+ 
         _safeMint(_owner, newGizzyId);
         _setTokenURI(newGizzyId, _tokenURI);
         
         return newGizzyId;
-
+ 
     }
     
     // limits the number of gizzies the contract owner can ever create
     uint256 public promoCreationLimit = 5000;
     uint256 public gen0CreationLimit = 50000;
-
+ 
     // Constants for gen0 auctions
     uint256 public gen0StartingPrice = 1e10;
     uint256 public gen0AuctionDuration = 1 days;
-
+ 
     // Counts the number of gizzies the contract owner has created
     uint256 public promoCreatedCount;
     uint256 public gen0CreatedCount;
-
+ 
     // called by admin
     function createPromoGizzy(address _owner, bool _breedable, string memory _tokenURI) public onlyOwner whenNotPaused {
-
+ 
         // set owner to whoever gizzy is being gifted
         // when promo gizzy is auctioned, gift to their own account and then start auction
-
+ 
         require(promoCreatedCount < promoCreationLimit);
         require(gen0CreatedCount < gen0CreationLimit);
     
@@ -168,7 +168,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
         gen0CreatedCount ++;
         _createGizzy(0, 0, 0, _owner, _breedable, _tokenURI);
     }
-
+ 
     //
     // Core Contract that is deployed
     //
@@ -188,7 +188,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
       // uint256 genes instead show tokenURI
     ) {
       Gizzy storage giz = gizzies[_id];
-
+ 
       isGestating = (giz.siringWithId != 0);
       isReady = (giz.cooldownEndTime <= block.timestamp);
       cooldownIndex = uint256(giz.cooldownIndex);
@@ -200,5 +200,5 @@ contract GizzyBase is ERC721URIStorageUpgradeable, Initializable{
       generation = uint256(giz.generation);
       // genes = giz.genes; instead show tokenURI
     }
-
+ 
 }
