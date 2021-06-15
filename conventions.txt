@@ -18,3 +18,12 @@ for the new logic contract
 Deployment:
 run migration file for the new logic contract. then change the implementation address on the 
 proxy contract
+
+deploy the 1st and 2nd migration. change the variable inside the 3rd migration to 2nd's address.
+change ownership to superuser and initiate the logic contract (which will set self as admin)
+
+ROLES:
+1. Owner - controls the proxy contract
+2. Admin - main owner of the logic contract
+3. Accountant - handles money stuff
+4. Server - handles stuff that requires some level of automation
