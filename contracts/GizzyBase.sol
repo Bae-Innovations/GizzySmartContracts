@@ -35,7 +35,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
     modifier onlyAuthority() {
         require(
             msg.sender == adminAddress ||
-            msg.sender == serverAddress\
+            msg.sender == serverAddress
         );
         _;
     }
@@ -83,7 +83,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
         paused = false;
     }
  
-    event Birth(uint256 kittyId, uint256 matronId, uint256 sireId, address indexed owner, string tokenURI);
+    event Birth(uint256 gizzyId, uint256 matronId, uint256 sireId, address indexed owner, string tokenURI);
  
     struct Gizzy {
         uint64 birthTime;
@@ -187,8 +187,8 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
       uint256 birthTime,
       uint256 matronId,
       uint256 sireId,
-      uint256 generation
-      string tokenURI
+      uint256 generation,
+      string memory ipfsHash
     ) {
       Gizzy storage giz = gizzies[_id];
  
@@ -201,7 +201,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
       matronId = uint256(giz.matronId);
       sireId = uint256(giz.sireId);
       generation = uint256(giz.generation);
-      tokenURI = tokenURI(_id);
+      ipfsHash = tokenURI(_id);
     }
  
 }
