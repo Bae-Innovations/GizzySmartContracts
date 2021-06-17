@@ -203,5 +203,12 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
       generation = uint256(giz.generation);
       ipfsHash = tokenURI(_id);
     }
+    
+    function buyEgg() public payable
+    {
+        require(msg.value >= 0.3 ether);
+        _createGizzy(0, 0, 0, msg.sender, false, "asd");
+        
+    }
  
 }
