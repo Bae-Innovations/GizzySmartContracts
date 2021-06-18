@@ -56,7 +56,7 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
     function setAccountant(address payable _newAccountant) public onlyAdmin {
         require(_newAccountant != address(0));
  
-        serverAddress = _newAccountant;
+        accountantAddress = _newAccountant;
     }
 
     function withdrawBalance() external onlyAccountant {
@@ -204,11 +204,13 @@ contract GizzyBase is ERC721URIStorageUpgradeable{
       ipfsHash = tokenURI(_id);
     }
     
-    function buyEgg() public payable
+    event BoughtEgg(uint256 gizzyId, address indexed owner, string tokenURI);
+
+    function buyEgg() public payable whenNotPaused
     {
-        require(msg.value >= 0.3 ether);
-        uint256 gizzyId = _createGizzy(0, 0, 0, msg.sender, false, "asd");
-        emit BoughtEgg(gizzyId, msg.sender, "asd");
+        require(msg.value >= 0.33 ether);
+        uint256 gizzyId = _createGizzy(0, 0, 0, msg.sender, false, "https://ipfs.io/ipfs/QmRXozDnevn2VrDMPGzspBfDNM6En7bJgkqxi4QdUELMdj");
+        emit BoughtEgg(gizzyId, msg.sender, "https://ipfs.io/ipfs/QmRXozDnevn2VrDMPGzspBfDNM6En7bJgkqxi4QdUELMdj");
         
     }
  

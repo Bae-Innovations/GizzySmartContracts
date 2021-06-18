@@ -7750,36 +7750,36 @@
     "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/ProxyContract.sol",
     "exportedSymbols": {
       "Address": [
-        3299
+        3337
       ],
       "ERC1967Proxy": [
-        2420
+        2458
       ],
       "ERC1967Upgrade": [
-        2777
+        2815
       ],
       "IBeacon": [
-        2839
+        2877
       ],
       "Proxy": [
-        2829
+        2867
       ],
       "ProxyContract": [
-        606
+        644
       ],
       "StorageSlot": [
-        3359
+        3397
       ],
       "TransparentUpgradeableProxy": [
-        3003
+        3041
       ]
     },
-    "id": 607,
+    "id": 645,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 587,
+        "id": 625,
         "literals": [
           "solidity",
           ">=",
@@ -7795,11 +7795,11 @@
       {
         "absolutePath": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
         "file": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
-        "id": 588,
+        "id": 626,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 607,
-        "sourceUnit": 3004,
+        "scope": 645,
+        "sourceUnit": 3042,
         "src": "66:83:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -7809,32 +7809,32 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 589,
+              "id": 627,
               "name": "TransparentUpgradeableProxy",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3003,
+              "referencedDeclaration": 3041,
               "src": "177:27:2"
             },
-            "id": 590,
+            "id": 628,
             "nodeType": "InheritanceSpecifier",
             "src": "177:27:2"
           }
         ],
         "contractDependencies": [
-          2420,
-          2777,
-          2829,
-          3003
+          2458,
+          2815,
+          2867,
+          3041
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 606,
+        "id": 644,
         "linearizedBaseContracts": [
-          606,
-          3003,
-          2420,
-          2777,
-          2829
+          644,
+          3041,
+          2458,
+          2815,
+          2867
         ],
         "name": "ProxyContract",
         "nameLocation": "160:13:2",
@@ -7842,23 +7842,23 @@
         "nodes": [
           {
             "body": {
-              "id": 604,
+              "id": 642,
               "nodeType": "Block",
               "src": "310:2:2",
               "statements": []
             },
-            "id": 605,
+            "id": 643,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 595,
+                    "id": 633,
                     "name": "_logicAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 592,
+                    "referencedDeclaration": 630,
                     "src": "273:13:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7867,7 +7867,7 @@
                   },
                   {
                     "expression": {
-                      "id": 596,
+                      "id": 634,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -7878,7 +7878,7 @@
                         "typeString": "msg"
                       }
                     },
-                    "id": 597,
+                    "id": 635,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7895,7 +7895,7 @@
                     "arguments": [
                       {
                         "hexValue": "",
-                        "id": 600,
+                        "id": 638,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -7917,7 +7917,7 @@
                           "typeString": "literal_string \"\""
                         }
                       ],
-                      "id": 599,
+                      "id": 637,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -7929,14 +7929,14 @@
                         "typeString": "type(bytes storage pointer)"
                       },
                       "typeName": {
-                        "id": 598,
+                        "id": 636,
                         "name": "bytes",
                         "nodeType": "ElementaryTypeName",
                         "src": "300:5:2",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 601,
+                    "id": 639,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -7952,12 +7952,12 @@
                     }
                   }
                 ],
-                "id": 602,
+                "id": 640,
                 "modifierName": {
-                  "id": 594,
+                  "id": 632,
                   "name": "TransparentUpgradeableProxy",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 3003,
+                  "referencedDeclaration": 3041,
                   "src": "245:27:2"
                 },
                 "nodeType": "ModifierInvocation",
@@ -7968,17 +7968,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 593,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 592,
+                  "id": 630,
                   "mutability": "mutable",
                   "name": "_logicAddress",
                   "nameLocation": "230:13:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 605,
+                  "scope": 643,
                   "src": "222:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -7987,7 +7987,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 591,
+                    "id": 629,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "222:7:2",
@@ -8003,19 +8003,19 @@
               "src": "221:23:2"
             },
             "returnParameters": {
-              "id": 603,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "310:0:2"
             },
-            "scope": 606,
+            "scope": 644,
             "src": "210:102:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 607,
+        "scope": 645,
         "src": "151:163:2"
       }
     ],
@@ -8025,36 +8025,36 @@
     "absolutePath": "/home/imtiaz/Desktop/baeinnovations/gizzy-smartcontracts/contracts/ProxyContract.sol",
     "exportedSymbols": {
       "Address": [
-        3299
+        3337
       ],
       "ERC1967Proxy": [
-        2420
+        2458
       ],
       "ERC1967Upgrade": [
-        2777
+        2815
       ],
       "IBeacon": [
-        2839
+        2877
       ],
       "Proxy": [
-        2829
+        2867
       ],
       "ProxyContract": [
-        606
+        644
       ],
       "StorageSlot": [
-        3359
+        3397
       ],
       "TransparentUpgradeableProxy": [
-        3003
+        3041
       ]
     },
-    "id": 607,
+    "id": 645,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 587,
+        "id": 625,
         "literals": [
           "solidity",
           ">=",
@@ -8070,11 +8070,11 @@
       {
         "absolutePath": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
         "file": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
-        "id": 588,
+        "id": 626,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 607,
-        "sourceUnit": 3004,
+        "scope": 645,
+        "sourceUnit": 3042,
         "src": "66:83:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -8084,32 +8084,32 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 589,
+              "id": 627,
               "name": "TransparentUpgradeableProxy",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3003,
+              "referencedDeclaration": 3041,
               "src": "177:27:2"
             },
-            "id": 590,
+            "id": 628,
             "nodeType": "InheritanceSpecifier",
             "src": "177:27:2"
           }
         ],
         "contractDependencies": [
-          2420,
-          2777,
-          2829,
-          3003
+          2458,
+          2815,
+          2867,
+          3041
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 606,
+        "id": 644,
         "linearizedBaseContracts": [
-          606,
-          3003,
-          2420,
-          2777,
-          2829
+          644,
+          3041,
+          2458,
+          2815,
+          2867
         ],
         "name": "ProxyContract",
         "nameLocation": "160:13:2",
@@ -8117,23 +8117,23 @@
         "nodes": [
           {
             "body": {
-              "id": 604,
+              "id": 642,
               "nodeType": "Block",
               "src": "310:2:2",
               "statements": []
             },
-            "id": 605,
+            "id": 643,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 595,
+                    "id": 633,
                     "name": "_logicAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 592,
+                    "referencedDeclaration": 630,
                     "src": "273:13:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -8142,7 +8142,7 @@
                   },
                   {
                     "expression": {
-                      "id": 596,
+                      "id": 634,
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -8153,7 +8153,7 @@
                         "typeString": "msg"
                       }
                     },
-                    "id": 597,
+                    "id": 635,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8170,7 +8170,7 @@
                     "arguments": [
                       {
                         "hexValue": "",
-                        "id": 600,
+                        "id": 638,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8192,7 +8192,7 @@
                           "typeString": "literal_string \"\""
                         }
                       ],
-                      "id": 599,
+                      "id": 637,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -8204,14 +8204,14 @@
                         "typeString": "type(bytes storage pointer)"
                       },
                       "typeName": {
-                        "id": 598,
+                        "id": 636,
                         "name": "bytes",
                         "nodeType": "ElementaryTypeName",
                         "src": "300:5:2",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 601,
+                    "id": 639,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -8227,12 +8227,12 @@
                     }
                   }
                 ],
-                "id": 602,
+                "id": 640,
                 "modifierName": {
-                  "id": 594,
+                  "id": 632,
                   "name": "TransparentUpgradeableProxy",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 3003,
+                  "referencedDeclaration": 3041,
                   "src": "245:27:2"
                 },
                 "nodeType": "ModifierInvocation",
@@ -8243,17 +8243,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 593,
+              "id": 631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 592,
+                  "id": 630,
                   "mutability": "mutable",
                   "name": "_logicAddress",
                   "nameLocation": "230:13:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 605,
+                  "scope": 643,
                   "src": "222:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8262,7 +8262,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 591,
+                    "id": 629,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "222:7:2",
@@ -8278,19 +8278,19 @@
               "src": "221:23:2"
             },
             "returnParameters": {
-              "id": 603,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "310:0:2"
             },
-            "scope": 606,
+            "scope": 644,
             "src": "210:102:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 607,
+        "scope": 645,
         "src": "151:163:2"
       }
     ],
@@ -8301,15 +8301,21 @@
     "version": "0.8.3+commit.8d00100c.Emscripten.clang"
   },
   "networks": {
+    "56": {
+      "events": {},
+      "links": {},
+      "address": "0x6B2f2da9864aaBDbaa2B879F2cB51E6F985beEb7",
+      "transactionHash": "0x1fac7573e7acf3188041b71725f39b256f6ed67738e1f5c3cc2e1d99f34bbc76"
+    },
     "97": {
       "events": {},
       "links": {},
-      "address": "0xC984F3C99816af6F5E2A55E815355e013b741F3e",
-      "transactionHash": "0x9d065e1a159727a8c1351099303839325c33141bd8b3bac275735cb0608d1cc1"
+      "address": "0x81F6375AFba49789C37527c3Be87dc1fEA7A8Fb4",
+      "transactionHash": "0x0a5a3d56b5bb31ad12a20d076e17deddf5c6656b2501493e1d9436fb6cd6ea3c"
     }
   },
   "schemaVersion": "3.4.0",
-  "updatedAt": "2021-06-15T10:06:42.611Z",
+  "updatedAt": "2021-06-18T12:18:16.011Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
